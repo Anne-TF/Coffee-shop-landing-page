@@ -1,0 +1,134 @@
+/*
+STYLE GUIDE
+0 - RESET
+1 - LAYOUT
+2 -  GENERIC ITEMS
+3 - PARTS OF THE WEB
+4 - LISTS
+5 - FORMS
+6 - ANIMATIONS
+7 = MOBILE RESPONSE
+----------------
+COLORS
+color 1 (cafe oscuro) = #573d2f
+color 2 (cafe claro) = #916b56
+color 3 (melon) = #eba883
+color 4 (amarillo crema) = #f5dab3
+*/
+
+/* 0 RESET */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 1 LAYOUT */
+
+body { text-align: center; font: 300 20px/1em 'Lobster', cursive; font-display: block; background-color: #573d2f; color: #fff; scroll-behavior: smooth; }
+  .header { display: flex; justify-content: center; align-items: center; }
+    .header > .title { font: 400 50px/0.8em 'Sacramento', cursive; font-weight: bold; background-color: RGB(87, 61, 47, 0.6); width: 100%; padding: 1% 0 5%; color: #fff; }
+		.list { display: flex; justify-content: center; align-items: center; }
+		.social > figure { display: flex; justify-content: center; align-items: center; flex-flow: column; }
+		footer { padding: 10%; }
+
+
+/* 2 GENERIC ITEMS */
+
+.header { height: 80vh; background: url('img/dummy-header.jpg') no-repeat center top 100%; background-size: cover; }
+.title { font-size: 38px; color:#fff; margin-bottom: 40px; }
+
+.container-menu { display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: minmax(50px, 100px); background-color: #916b56; font-size: 25px; justify-content: center; align-items: center; grid-gap: 1rem;  }
+  .container-menu > a { text-decoration: none; color: #fff;  padding: 20px 5px; border: solid 3px #fff; margin:10px; border-radius: 6px; }
+
+.container-products > div > h2 { font-size: 38px; color: #fff; margin: 0 auto 30px; padding: 15%; border-radius: 4px; }
+	.container-products > div > p { font-size: 17px; margin: 20px 30px 40px; font-weight: lighter; }
+	.container-products > div { border-radius: 6px; }
+
+
+
+
+/* PARTS OF THE WEB */
+
+
+ .princ { font-size: 95px; line-height: 1.3em; }
+
+ .services { margin: 14% 0 5%; }
+ 	.services > h1 { text-align: left; margin-left: 18%; margin-top: 10px; }
+
+ .social { background-color: #916b56; padding: 10% 0; }
+ 	.social > p { margin: 0 50px; }
+
+ .container-products { display: grid; grid-template-columns: repeat(3, 2fr); grid-template-rows: 1fr 1fr 1fr; grid-template-areas: "p1 p1 about" "p2 p2 about" "p3 p3 about"; grid-gap: 0.5em; margin: 10px 10px 0; }
+ 	.container-products > div > h3 { margin: 0 auto; ; font-size: 40px; color: transparent; padding: 23% 0 23%; border-radius: 6px; border: solid 1px #fff; }
+ 	div :hover > h3 { color: #fff; border: solid 2px #fff; background-color: RGB(31, 31, 31, 0.3); }
+
+ #about { background-color: #eba883; grid-area: about; }
+ #p1 { background: url('img/c2.jpg') no-repeat center top 30%; background-size: cover; grid-area: p1; }
+ #p2 { background: url("img/p2.jpg") no-repeat center top 30%; background-size: cover; grid-area: p2; }
+ #p3 { background: url("img/m3.jpg") no-repeat center top 0%; background-size: cover; grid-area: p3; }
+
+/* 4 LIST */
+
+
+ .list > figure { position: relative;; height: 100px; width: 101px; }
+  li { padding: 20px 15px; }
+ figcaption { margin: 10px 0; }
+ img { position: relative;}
+ figure :hover { background-color: RGB(31, 31, 80, 0.8);  border-radius: 90px; }
+
+/* 7 MOBILE RESPONSE */
+
+@media only screen and (max-width:650px){
+		.container-menu { font-size: 18px; gap: 0.5rem; }
+		  .container-menu > a { padding: 15px 5px; border: solid 2px #fff; margin:10px; border-radius: 6px; }
+
+	.container-products { grid-template-columns: 1fr; grid-template-rows: 1.5fr 1.5fr 1.5fr 2.5fr; grid-template-areas: "p1" "p2" "p3" "about" "social"; margin: 0 20px; gap: 1.2rem;  }
+		.services > h1 {  text-align: center; margin-left: 0 ;}
+	.container-products > div > h3 { font-size: 30px; padding: 25% 0 24%;}
+	.container-products > div > h2 { border: none; border-radius: 4px; }
+
+}
